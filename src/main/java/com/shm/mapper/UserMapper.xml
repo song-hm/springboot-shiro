@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace命名空间。作用就是对SQL进行分类管理，理解为SQL隔离 
+注意：使用mapper代理方法开发，namespace有特殊重要的作用 namespace等于mapper接口地址-->
+<mapper namespace="com.shm.mapper.UserMapper">	
+		
+	<select id="findByName" parameterType="String" resultType="user">
+		SELECT * FROM springboot.user where name = #{value}
+	</select>
+	
+	<select id="findById" parameterType="int" resultType="user">
+		SELECT * FROM springboot.user where id = #{value}
+	</select>
+</mapper>
